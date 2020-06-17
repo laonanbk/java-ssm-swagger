@@ -1,0 +1,53 @@
+package com.learning.ssm_swagger.modules.system.service.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.Set;
+
+/**
+ * @Author Qizy
+ * @Date 2020/6/16 15:58
+ * @Version 1.0
+ */
+@Data
+public class UserDto implements Serializable {
+
+    @ApiModelProperty(hidden = true)
+    private Long id;
+
+    private String username;
+
+    private String nickName;
+
+    private String sex;
+
+    private String avatar;
+
+    private String email;
+
+    private String phone;
+
+    private Boolean enabled;
+
+    @JsonIgnore
+    private String password;
+
+    private Date lastPasswordResetTime;
+
+    @ApiModelProperty(hidden = true)
+    private Set<RoleSmallDto> roles;
+
+    @ApiModelProperty(hidden = true)
+    private JobSmallDto job;
+
+    private DeptSmallDto dept;
+
+    private Long deptId;
+
+    private Timestamp createTime;
+}
